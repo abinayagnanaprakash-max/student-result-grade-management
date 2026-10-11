@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="brand">SR<span>MS</span></div>
+        <div>
+            <h1>Student Result Management</h1>
+            <p>Manage student marks and academic performance</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Passed Students</p>
+                <h2 id="passedStudents">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Failed Students</p>
+                <h2 id="failedStudents">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Class Average</p>
+                <h2 id="classAverage">0%</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Student Result</h2>
+            <p class="muted">Enter student details and marks out of 100.</p>
+
+            <form id="studentForm">
+                <div class="form-grid">
+                    <label>Roll Number
+                        <input id="rollNo" required maxlength="20"
+                               placeholder="e.g. 711525BEE001">
+                    </label>
+                    <label>Student Name
+                        <input id="name" required maxlength="100"
+                               placeholder="Enter full name">
+                    </label>
+                    <label>Subject 1
+                        <input id="subject1" type="number" min="0" max="100" required>
+                    </label>
+                    <label>Subject 2
+                        <input id="subject2" type="number" min="0" max="100" required>
+                    </label>
+                    <label>Subject 3
+                        <input id="subject3" type="number" min="0" max="100" required>
+                    </label>
+                    <label>Subject 4
+                        <input id="subject4" type="number" min="0" max="100" required>
+                    </label>
+                    <label>Subject 5
+                        <input id="subject5" type="number" min="0" max="100" required>
+                    </label>
+                </div>
+                <button type="submit" id="submitBtn">Add Student</button>
+                <p id="message" role="status"></p>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="table-heading">
+                <div>
+                    <h2>Student Records</h2>
+                    <p class="muted">View and search saved results.</p>
+                </div>
+                <input id="searchInput" placeholder="Search roll number..."
+                       aria-label="Search by roll number">
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Total / 500</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable">
+                        <tr><td colspan="7">Loading student records...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Grade Criteria</h2>
+            <div class="grade-list">
+                <span>A+ · 90–100% · Outstanding</span>
+                <span>A · 75–89% · Excellent</span>
+                <span>B · 60–74% · Good</span>
+                <span>C · 40–59% · Average</span>
+                <span>Fail · Below 40%</span>
+            </div>
+            <p class="muted">A student passes only if every subject mark is at least 40.</p>
+        </section>
+    </main>
+
+    <footer>Student Result Management System · Academic Dashboard</footer>
+</body>
+</html>
